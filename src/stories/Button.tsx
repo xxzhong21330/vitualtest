@@ -6,6 +6,8 @@ interface ButtonProps {
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
+
+  color?: string;
   /**
    * What background color to use
    */
@@ -30,6 +32,7 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   size = 'medium',
+  color,
   backgroundColor,
   label,
   ...props
@@ -39,7 +42,7 @@ export const Button = ({
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      style={{ backgroundColor, color }}
       {...props}
     >
       {label}
